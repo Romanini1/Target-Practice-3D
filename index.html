@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Practice 3D - Three.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        
+        <div id="ui-overlay">
+            <div id="hud">
+                <div id="score-display">Pontuação: <span id="score">0</span></div>
+                <div id="targets-display">Alvos: <span id="targets-hit">0</span>/<span id="targets-total">0</span></div>
+                <div id="time-display">Tempo: <span id="time">60</span>s</div>
+            </div>
+            
+            <button id="exit-btn" class="hidden">Sair para Lobby</button>
+            
+            <div id="instructions">
+                <h2>🎯 Target Practice 3D</h2>
+                              <p>Clique nos alvos para pontuar!</p>
+                <p>🔴 Alvos vermelhos: 10 pontos</p>
+                <p>🟡 Alvos dourados: 50 pontos</p>
+                <p>🟢 Alvos móveis: 100 pontos</p>
+                <p>🔵 Alvos circulares: 150 pontos</p>
+                <p>🟣 Alvos senoidais: 200 pontos</p>
+                <p>🔴 Alvos vermelhos escuros: -50 pontos e -5s</p>              
+                <div id="difficulty-selection">
+                    <h3>Selecione a Dificuldade:</h3>
+                    <div class="difficulty-buttons">
+                        <button id="easy-btn" class="difficulty-btn active" data-difficulty="easy">Fácil</button>
+                        <button id="medium-btn" class="difficulty-btn" data-difficulty="medium">Médio</button>
+                        <button id="hard-btn" class="difficulty-btn" data-difficulty="hard">Difícil</button>
+                    </div>
+                    <div id="difficulty-info">
+                        <p id="difficulty-description">Fácil: 90s, alvos lentos, poucos obstáculos</p>
+                    </div>
+                </div>
+                
+                <button id="start-btn">Iniciar Jogo</button>
+            </div>
+            
+            <div id="game-over" class="hidden">
+                <h2>Fim de Jogo!</h2>
+                <p>Pontuação Final: <span id="final-score">0</span></p>
+                <p>Precisão: <span id="accuracy">0</span>%</p>
+                <button id="restart-btn">Jogar Novamente</button>
+            </div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GLTFLoader para carregar modelos -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <script src="game.js"></script>
+</body>
+</html>
+
